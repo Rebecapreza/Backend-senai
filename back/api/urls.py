@@ -7,14 +7,14 @@ from rest_framework_simplejwt.views import (
 
 urlpatterns = [
     #get/post
-    path ('Autores', AutoresView.as_view()),
+    path ('Autores', AutorView.as_view()),
     path ('autoeres', visualizacao_autor),
     path ('Editora', EditoraView.as_view()),
     path ('Livro', LivroView.as_view()),
-    path ('Buscar', AutoresView.as_view()),
+    path ('Buscar', AutorView.as_view()),
 
     #update/ delete
-    path ('autores/<int:pk>', AutoresDetailView.as_view()),
+    path ('autores/<int:pk>', AutorDetailView.as_view()),
     path ('Editora/<int:pk>', EditoraDetailView.as_view()),
     path ('Livro/<int:pk>', LivroDetailView.as_view()),
 
