@@ -1,17 +1,17 @@
-import { Injectable, Inject, inject } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { Autor } from "../models/autor";
-import { enviroment } from "../environments/enviroment";
+import { inject, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Autor } from '../model/autor';
+import { environment } from '../../environments/environments';
 
+@Injectable({ providedIn: 'root' })
+export class AutoresServices {
+  private http = inject (HttpClient)
+  private base = environment.apiBase
 
-@Injectable({providedIn: 'root'})
-export class AutoresService{
-    private http = inject(HttpClient) 
-    private base = enviroment.apiBase
-
-    listar(): Observable<Autor[]>{
-        const url = `${this.base}autores`
-        return this.http.get<Autor[]>(url)
-    }
+  listar(): Observable<Autor[]>{
+    const url = `${this.base}api/Autores`
+    return this.http.get<Autor[]>(url)
+  }
+  
 }

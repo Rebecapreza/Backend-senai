@@ -13,7 +13,7 @@ from rest_framework.filters import SearchFilter
 class AutorView(ListCreateAPIView):
     queryset = Autor.objects.all()
     serializer_class = AutorSerializers
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['id']
     search_fields = ['nome']
