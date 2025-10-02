@@ -1,16 +1,21 @@
-import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Livro } from '../models/livro';
-import { environment } from '../enviroments/envroments';
+import { Autor } from './autor';
+import { Editora } from './editora';
 
-@Injectable({ providedIn: 'root' })
-export class LivroService {
-  private http = inject(HttpClient);
-  private base = environment.apiBase;
-  
-  listar(): Observable<Livro[]> {
-    const url = `${this.base}api/livros`;
-    return this.http.get<Livro[]>(url);
-  }
+export interface Livro {
+    id: number;
+    titulo: string;
+    subtitulo?: string|null;
+    autor: Autor;
+    editora: Editora;
+    isbn: string;
+    descricao?: string|null;
+    idioma?: string|null;
+    ano: number;
+    paginas: number;
+    preco: number;
+    estoque: number;
+    desconto?: number|null;
+    disponivel: boolean;
+    dimensoes?: string|null;
+    peso?: number|null;
 }

@@ -1,12 +1,13 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { EditoraService } from '../../services/editoras.services';
-import { Editora } from '../../models/editora'; // se o modelo Editora estiver no mesmo arquivo
+import { Editora } from '../../model/editora'; // se o modelo Editora estiver no mesmo arquivo
 import { AuthService } from '../../services/auth.services';
 
 @Component({
   standalone: true,
   imports: [RouterLink],
+  styleUrl: './editora.component.css',
   template: `
     <section style="max-width:900px;margin:2rem auto;padding:0 1rem">
       <h1>Editoras</h1>

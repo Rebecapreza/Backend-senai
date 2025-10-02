@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LivroService } from '../../services/livro.services';  // Serviço para livros
-import { Livro } from '../../models/livro';  // Modelo de Livro
+import { Livro } from '../../model/livro';  // Modelo de Livro
 import { AuthService } from '../../services/auth.services';
 import { DecimalPipe } from '@angular/common';
 
@@ -9,6 +9,7 @@ import { DecimalPipe } from '@angular/common';
 @Component({
   standalone: true,
   imports: [RouterLink, DecimalPipe],
+  styleUrl: './livros.component.css',
   template: `
     <section style="max-width:900px;margin:2rem auto;padding:0 1rem">
       <h1>Livros</h1>

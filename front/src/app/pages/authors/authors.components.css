@@ -1,0 +1,137 @@
+/* autores.component.css */
+
+/* --- Variáveis e Configurações Globais (opcional, mas útil) --- */
+:root {
+    --primary-color: #3f51b5; /* Azul índigo */
+    --accent-color: #ff4081; /* Rosa vibrante */
+    --text-dark: #333;
+    --text-medium: #555;
+    --text-light: #888;
+    --background-light: #f9f9f9;
+    --border-color: #e0e0e0;
+}
+
+/* --- Layout Principal --- */
+section {
+    max-width: 900px;
+    margin: 3rem auto; /* Mais espaçamento vertical */
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Título --- */
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.2em;
+    font-weight: 600;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+/* --- Mensagens de Status (Carregando/Erro) --- */
+p {
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+/* Carregando... */
+p:not([style*="color:#c62828"]) {
+    color: var(--primary-color);
+    background-color: #e8eaf6; /* Cor de fundo suave */
+    font-style: italic;
+}
+
+/* Erro */
+p[style*="color:#c62828"] {
+    color: #c62828 !important; /* Mantendo a cor de erro */
+    background-color: #ffebee;
+    border: 1px solid #c62828;
+    font-weight: bold;
+}
+
+/* --- Lista de Autores --- */
+ul {
+    list-style: none; /* Remove marcadores padrão */
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-light);
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: #fff;
+    border-color: var(--primary-color); /* Realce ao passar o mouse */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Detalhes do Autor --- */
+strong {
+    color: var(--text-dark);
+    font-size: 1.2em;
+    display: inline-block; /* Para melhor controle do espaçamento */
+    margin-right: 0.5rem;
+}
+
+em { /* Nacionalidade (a.nacion) */
+    color: var(--text-medium);
+    font-style: normal;
+    font-size: 0.95em;
+    padding: 2px 6px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+/* Data de Nascimento (• a.data_nasc) */
+li > strong + em + span { /* Para estilizar o elemento da data se ele for o próximo */
+    color: var(--text-light);
+    font-size: 0.9em;
+}
+
+div { /* Biografia (a.biogra) */
+    color: var(--text-medium);
+    font-size: 0.95em;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+    padding-left: 1rem;
+    border-left: 4px solid var(--accent-color); /* Linha de destaque para a biografia */
+}
+
+/* --- Navegação --- */
+nav {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+}

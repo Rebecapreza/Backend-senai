@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.services';
 @Component({
   standalone: true,
   imports: [RouterLink],
+  styleUrl: './authors.components.css', 
   template: `
     <section style="max-width:900px;margin:2rem auto;padding:0 1rem">
       <h1>Autores</h1>

@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Livro } from '../models/livro';
-import { environment } from '../enviroments/envroments';
+import { Livro } from '../model/livro';
+import { environment } from '../../environments/environments';
 
 @Injectable({ providedIn: 'root' })
 export class LivroService {
@@ -10,7 +10,7 @@ export class LivroService {
   private base = environment.apiBase;
   
   listar(): Observable<Livro[]> {
-    const url = `${this.base}api/livros`;
+    const url = `${this.base}api/Livro`;
     return this.http.get<Livro[]>(url);
   }
 }
