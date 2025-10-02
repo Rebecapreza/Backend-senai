@@ -17,6 +17,9 @@ class Editora(models.Model):
     telefone = models.CharField(max_length=20, null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
     site = models.URLField(null=True, blank=True)
+    
+    def __str__(self):
+        return f"{self.editora}"
 
 class Livro(models.Model):
     titulo = models.CharField(max_length=50)
@@ -34,3 +37,6 @@ class Livro(models.Model):
     disponivel = models.BooleanField(default=True)
     dimensoes = models.CharField(max_length=50)
     peso = models.DecimalField(max_digits=5, decimal_places=2)
+    
+    def __str__(self):
+        return f"{self.titulo}"

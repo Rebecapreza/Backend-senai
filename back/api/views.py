@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 
-
+#Autores
 class AutorView(ListCreateAPIView):
     queryset = Autor.objects.all()
     serializer_class = AutorSerializers
@@ -23,6 +23,7 @@ class AutorDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = AutorSerializers
     permission_classes = [IsAuthenticated]
 
+#Editoras
 class EditoraView(ListCreateAPIView):
     queryset = Editora.objects.all()
     serializer_class = EditoraSerializers
@@ -33,6 +34,7 @@ class EditoraDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = EditoraSerializers
     permission_classes = [IsAuthenticated]
 
+#Livros
 class LivroView(ListCreateAPIView):
     queryset = Livro.objects.all()
     serializer_class = LivroSerializers

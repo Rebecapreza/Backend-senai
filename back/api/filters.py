@@ -18,4 +18,4 @@ class AutorFIlter(df.FilterSet):
     
     class Meta:
         model = Autor
-        fields = []
+        fields = [] # <- já que você está usando métodos customizados
